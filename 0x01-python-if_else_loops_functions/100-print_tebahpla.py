@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-i = 122
-while i > 96:
-    if i % 2 != 0:
-        x = i - 32
+for i in range(ord('z'), ord('a') - 1, -1):
+    if i % 2 == 0:
+        print("{:s}".format(chr(i)), end="")
     else:
-        x = i
-    print(chr(x), end='')
-    i -= 1
+        print("{:s}".format(chr(i - 32)), end="")
