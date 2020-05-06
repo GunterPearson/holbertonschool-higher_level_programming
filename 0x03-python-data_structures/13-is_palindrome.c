@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  * is_palindrome - checks linked list for palindrome
  * @head: head of linked list
@@ -7,16 +8,32 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i = 0, j = 0;
 	listint_t *temp = (*head);
+	int i = 0, j = 0, k = 0, l = 0;
+	int list[20];
 
-	i = temp->n;
-	while (temp && temp->next)
+	while (temp->next)
 	{
+		list[i] = temp->n;
 		temp = temp->next;
+		i++;
+		if (!temp->next)
+			list[i] = temp->n;
 	}
-	j = temp->n;
-	if (i == j)
-		return (1);
-	return (0);
+	i += 1;
+	list[i] = '\0';
+	while (list[j])
+	{
+		j++;
+	}
+	j = j - 1;
+	l = j / 2;
+	while (k <= l)
+	{
+		if (list[k] != list[j])
+			return (0);
+		k++;
+		j--;
+	}
+	return (1);
 }
