@@ -19,6 +19,4 @@ def roman_to_int(roman_string):
                 i += roman_dict[key]
     if list_a[0] == 'I' and list_a[1] == 'X':
         i -= 2
-    if list_a[0] == 'I' and list_a[1] == 'V':
-        i -= 1
     return i
