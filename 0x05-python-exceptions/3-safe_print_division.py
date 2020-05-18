@@ -2,7 +2,7 @@
 def safe_print_division(a, b):
     quot = 0
     try:
-        quot = a / b
+        quot = int(a) / int(b)
     except:
         quot = None
     finally:
