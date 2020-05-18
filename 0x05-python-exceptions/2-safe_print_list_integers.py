@@ -9,6 +9,5 @@ def safe_print_list_integers(my_list=[], x=0):
             y += 1
         except:
             y += 1
-            pass
     print()
     return i
