@@ -68,6 +68,8 @@ class Square:
         if self.size == 0:
             return '\n'
         else:
+            for y in range(self.position[1]):
+                st += '\n'
             for x in range(self.size):
                 for z in range(self.position[0] + self.size):
                     if z < self.position[0]:
