@@ -32,8 +32,8 @@ class Square:
         if type(value) is tuple:
             if value[0] >= 0:
                 self.__position = value
-            else:
-                raise TypeError(str)
+        else:
+            raise TypeError(str)
 
     """ init function sets public value """
     def __init__(self, size=0, position=(0, 0)):
