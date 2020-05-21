@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 Say_my_name module
+contains function:
+say_my_name
 """
 
 
