@@ -1,0 +1,50 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is a text file in reStructuredText format.  First import
+``add_integer`` from the ``0-add_integer`` module:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(2)
+100
+
+>>> add_integer(100.3, -2)
+98
+
+Checking TypeErrors.
+--------------------
+
+>>> add_integer(12, "hello")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer("hello", 12)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Checking bool.
+-------------
+
+>>> add_integer(True, False)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(12, False)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(12)
+110
