@@ -11,7 +11,7 @@ def matrix_divided(matrix, div):
     matrix division
     """
     s = "matrix must be a matrix (list of lists) of integers/floats"
-    if matrix is None:
+    if matrix is None or type(matrix) is not list:
         raise TypeError(s)
     result = all(type(y) in [int, float] for row in matrix for y in row)
     if not result:
