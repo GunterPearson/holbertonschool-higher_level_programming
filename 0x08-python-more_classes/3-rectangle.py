@@ -48,6 +48,8 @@ class Rectangle:
     """ control whats printed """
     def __str__(self):
         st = ""
+        if self.width is 0 or self.height is 0:
+            return st
         for x in range(self.height):
             for y in range(self.width):
                 st += "#"
