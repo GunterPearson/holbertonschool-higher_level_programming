@@ -11,6 +11,7 @@ class Rectangle:
     @property
     def width(self):
         return self.__width
+
     """ sets private width """
     @width.setter
     def width(self, value):
@@ -20,10 +21,12 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
+
     """ gets private height """
     @property
     def height(self):
         return self.__height
+
     """ sets private height """
     @height.setter
     def height(self, value):
@@ -33,18 +36,22 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
+
     """ public setter """
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
+
     """ public area """
     def area(self):
         return self.width * self.height
+
     """ public perim """
     def perimeter(self):
         if self.height is 0 or self.width is 0:
             return 0
         return self.width * 2 + self.height * 2
+
     """ control whats printed """
     def __str__(self):
         st = ""
