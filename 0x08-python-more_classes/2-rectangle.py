@@ -7,45 +7,46 @@ no methods yet
 
 
 class Rectangle:
-    """ gets private width """
+    """ Rectangle class """
     @property
     def width(self):
+        """ gets private width """
         return self.__width
 
-    """ sets private width """
     @width.setter
     def width(self, value):
-        if not isinstance(value, int):
+        """ sets private width """
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        else:
-            self.__width = value
+        self.__width = value
 
-    """ gets private height """
     @property
     def height(self):
+        """ gets private height """
         return self.__height
 
-    """ sets private height """
     @height.setter
     def height(self, value):
-        if not isinstance(value, int):
+        """ sets private height """
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
+        self.__height = value
 
-    """ public setter """
     def __init__(self, width=0, height=0):
+        """ public setter """
         self.width = width
         self.height = height
 
-    """ public area """
     def area(self):
+        """ public area """
         return self.width * self.height
 
-    """ public perim """
     def perimeter(self):
+        """ public perim """
+        if self.width is 0 or self.height is 0:
+            return 0
         return self.width * 2 + self.height * 2
