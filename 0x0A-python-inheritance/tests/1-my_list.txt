@@ -74,14 +74,15 @@ check string:
 Traceback (most recent call last):
 TypeError: unorderable types: int() < str()
 
-check bool:
+check none:
 -----------
 
 >>> my_list = MyList()
->>> my_list.append(True)
->>> my_list.append(2)
+>>> my_list.append(None)
 >>> my_list.append(3)
->>> my_list.append(False)
->>> my_list.append(7)
+>>> my_list.append(4)
+>>> my_list.append(4.5)
+>>> my_list.append(5)
 >>> my_list.print_sorted()
-[False, True, 2, 3, 7]
+Traceback (most recent call last):
+TypeError: unorderable types: int() < NoneType()
