@@ -74,15 +74,3 @@ check string:
 Traceback (most recent call last):
 TypeError: unorderable types: int() < str()
 
-
-check negative:
---------------
-
-
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(0)
->>> my_list.append(-1)
->>> my_list.append(-2)
->>> my_list.print_sorted()
-[-2, -1, 0, 1]
