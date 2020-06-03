@@ -74,3 +74,11 @@ check string:
 Traceback (most recent call last):
 TypeError: unorderable types: int() < str()
 
+check blank:
+------------
+
+>>> my_list = MyList()
+>>> my_list.append()
+Traceback (most recent call last):
+TypeError: append() takes exactly one argument (0 given)
+
