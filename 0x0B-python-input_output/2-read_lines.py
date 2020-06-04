@@ -11,7 +11,5 @@ def read_lines(filename="", nb_lines=0):
         if nb_lines <= 0:
             print(f.read(), end="")
         else:
-            for line in f:
-                if i < nb_lines:
-                    print(line.rstrip(), end="")
-                i += 1
+            for line in range(nb_lines):
+                print(f.readline(), end="")
