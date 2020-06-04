@@ -9,9 +9,9 @@ def read_lines(filename="", nb_lines=0):
     i = 0
     with open(filename, mode="r", encoding="utf-8") as f:
         if nb_lines <= 0:
-            print(f.read())
+            print(f.read(), end="")
         else:
             for line in f:
                 if i < nb_lines:
-                    print(line.rstrip())
+                    print(line.rstrip(), end="")
                 i += 1
