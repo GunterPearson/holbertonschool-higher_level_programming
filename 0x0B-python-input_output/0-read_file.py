@@ -6,5 +6,5 @@ Read file
 
 def read_file(filename=""):
     """Reading file"""
-    with open(filename, encoding='utf-8') as files:
+    with open(filename, mode="r", encoding='UTF8') as files:
         print(files.read())
