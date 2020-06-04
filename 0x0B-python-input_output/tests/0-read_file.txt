@@ -1,0 +1,17 @@
+The ``0-read_file`` module
+======================
+
+Using ``read_file``
+-------------------
+
+This is a text file in reStructuredText format.  First import
+``read_file`` from the ``0-read_file`` module:
+
+>>> read_file = __import__('0-read_file').read_file
+
+Now use it:
+
+
+>>> read_file("no_file.txt")
+Traceback (most recent call last):
+FileNotFoundError: [Errno 2] No such file or directory: 'no_file.txt'
