@@ -301,3 +301,6 @@ class TestRectangle_y(unittest.TestCase):
     def test_negative_y(self):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(3, 5, 0, -1)
+
+if __name__ == "__main__":
+    unittest.main()
