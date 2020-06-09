@@ -22,8 +22,5 @@ class Base:
         if list_dictionaries is None or list_dictionaries == []:
             return []
         else:
-            x = []
             import json
-            for d in list_dictionaries:
-                x.append(d)
-            return json.dumps(x)
+            return json.dumps(list_dictionaries)
