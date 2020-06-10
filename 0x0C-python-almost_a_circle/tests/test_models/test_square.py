@@ -6,7 +6,7 @@ from models.base import Base
 from models.square import Square
 
 
-class TestSquare_init(unittest.TestCase):
+class TestSquareClass(unittest.TestCase):
     """ test for square __init__"""
 
     def test_base(self):
@@ -83,6 +83,3 @@ class TestSquare_init(unittest.TestCase):
         s = Square(4, 1, 9, 2)
         s.size = 8
         self.assertEqual(8, s.width)
-
-if __name__ == "__main__":
-    unittest.main()

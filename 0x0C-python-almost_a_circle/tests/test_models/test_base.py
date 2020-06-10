@@ -5,7 +5,7 @@ import unittest
 from models import base
 
 
-class Testbase_Methods(unittest.TestCase):
+class TestBaseClass(unittest.TestCase):
     """Testing base.Base class"""
 
     def test_id(self):
@@ -53,6 +53,3 @@ class Testbase_Methods(unittest.TestCase):
     def test_from_file(self):
         """ test from file """
         pass
-
-if __name__ == '__main__':
-    unittest.main()

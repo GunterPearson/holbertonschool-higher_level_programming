@@ -6,7 +6,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 
 
-class TestRectangle_inst(unittest.TestCase):
+class TestRectangleClass(unittest.TestCase):
     """ test rectangle __init__"""
 
     def test_rectangle_is_base(self):
@@ -115,7 +115,7 @@ class TestRectangle_inst(unittest.TestCase):
         self.assertEqual(10, r.y)
 
 
-class TestRectangle_width(unittest.TestCase):
+class TestRectangleWidth(unittest.TestCase):
     """ test rectangle width """
 
     def test_None_width(self):
@@ -128,33 +128,8 @@ class TestRectangle_width(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle("invalid", 2)
 
-    def test_float_width(self):
-        """ test rectangle width """
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle(5.5, 1)
 
-    def test_complex_width(self):
-        """ test rectangle width """
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle(complex(5), 2)
-
-    def test_dict_width(self):
-        """ test rectangle width """
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle({"a": 1, "b": 2}, 2)
-
-    def test_bool_width(self):
-        """ test rectangle width """
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle(True, 2)
-
-    def test_list_width(self):
-        """ test rectangle width """
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle([1, 2, 3], 2)
-
-
-class TestRectangle_height(unittest.TestCase):
+class TestRectangleHeight(unittest.TestCase):
     """ test rectangle height"""
 
     def test_None_height(self):
@@ -167,43 +142,8 @@ class TestRectangle_height(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle(1, "invalid")
 
-    def test_list_height(self):
-        """ test rectangle height"""
-        with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(1, [1, 2, 3])
 
-    def test_set_height(self):
-        """ test rectangle height"""
-        with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(1, {1, 2, 3})
-
-    def test_tuple_height(self):
-        """ test rectangle height"""
-        with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(1, (1, 2, 3))
-
-    def test_frozenset_height(self):
-        """ test rectangle height"""
-        with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(1, frozenset({1, 2, 3, 1}))
-
-    def test_range_height(self):
-        """ test rectangle height"""
-        with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(1, range(5))
-
-    def test_negative_height(self):
-        """ test rectangle height"""
-        with self.assertRaisesRegex(ValueError, "height must be > 0"):
-            Rectangle(1, -1)
-
-    def test_zero_height(self):
-        """ test rectangle height"""
-        with self.assertRaisesRegex(ValueError, "height must be > 0"):
-            Rectangle(1, 0)
-
-
-class TestRectangle_x(unittest.TestCase):
+class TestRectangleX(unittest.TestCase):
     """ test rectangle x """
 
     def test_None_x(self):
@@ -257,7 +197,7 @@ class TestRectangle_x(unittest.TestCase):
             Rectangle(1, 2, True, 2)
 
 
-class TestRectangle_y(unittest.TestCase):
+class TestRectangleY(unittest.TestCase):
     """ Test rectangle y"""
 
     def test_dict_y(self):
@@ -269,51 +209,3 @@ class TestRectangle_y(unittest.TestCase):
         """ Test rectangle y"""
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle(1, 2, 1, [1, 2, 3])
-
-    def test_set_y(self):
-        """ Test rectangle y"""
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(1, 2, 1, {1, 2, 3})
-
-    def test_None_y(self):
-        """ Test rectangle y"""
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(1, 2, 3, None)
-
-    def test_str_y(self):
-        """ Test rectangle y"""
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(1, 2, 1, "invalid")
-
-    def test_float_y(self):
-        """ Test rectangle y"""
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(1, 2, 3, 5.5)
-
-    def test_complex_y(self):
-        """ Test rectangle y"""
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(1, 2, 3, complex(5))
-
-    def test_tuple_y(self):
-        """ Test rectangle y"""
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(1, 2, 1, (1, 2, 3))
-
-    def test_frozenset_y(self):
-        """ Test rectangle y"""
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(1, 2, 3, frozenset({1, 2, 3, 1}))
-
-    def test_range_y(self):
-        """ Test rectangle y"""
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(1, 2, 3, range(5))
-
-    def test_negative_y(self):
-        """ Test rectangle y"""
-        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
-            Rectangle(3, 5, 0, -1)
-
-if __name__ == "__main__":
-    unittest.main()
