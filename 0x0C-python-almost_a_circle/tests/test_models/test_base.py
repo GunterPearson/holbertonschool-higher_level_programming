@@ -5,6 +5,8 @@
 
 import unittest
 from models import base
+import pep8
+import json
 
 
 class TestBaseMethods(unittest.TestCase):
@@ -59,6 +61,13 @@ class TestBaseMethods(unittest.TestCase):
         """ test saving to json file """
 
         pass
+
+    def test_pep8_conformance(self):
+        """load_from_file Docstring Test"""
+        print("test_test_pep8_conformance")
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/base.py'])
+        self.assertEqual(result.total_errors, 0)
 
 if __name__ == '__main__':
     unittest.main()

@@ -5,6 +5,8 @@
 
 import unittest
 from models import base, rectangle
+import pep8
+import json
 
 
 class TestRectMethods(unittest.TestCase):
@@ -150,6 +152,13 @@ class TestRectMethods(unittest.TestCase):
         """test rectangle.Rectangle"""
 
         pass
+
+    def test_pep8_conformance(self):
+        """load_from_file Docstring Test"""
+        print("test_test_pep8_conformance")
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/rectangle.py'])
+        self.assertEqual(result.total_errors, 0)
 
 if __name__ == '__main__':
     unittest.main()
