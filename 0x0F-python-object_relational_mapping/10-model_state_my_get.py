@@ -13,9 +13,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     sesh = Session()
     st = sesh.query(State).filter(State.name == sys.argv[4]).all()
-
-    if st is not []:
-        for row in st:
-            print(row.id)
+    if st:
+        print("{}".format(st[0].id))
     else:
         print("Not found")
