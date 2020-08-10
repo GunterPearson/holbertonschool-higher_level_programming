@@ -14,7 +14,8 @@ if __name__ == "__main__":
     sesh = Session()
     st = sesh.query(State).filter(State.name == sys.argv[4]).all()
 
-    if st is None:
+    if st is not []:
+        for row in st:
+            print(row.id)
+    else:
         print("Not found")
-    for row in st:
-        print(row.id)
