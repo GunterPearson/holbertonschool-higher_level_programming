@@ -6,7 +6,6 @@ function second () {
     return (0);
   } else {
     const ret = arg.sort((a, b) => a - b);
-    console.log(ret);
     return (parseInt(ret.splice(-2, 1)));
   }
 }
