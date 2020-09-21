@@ -1,8 +1,6 @@
 #!/usr/bin/node
 var count = 0;
 exports.logMe = function (item) {
-  if (item) {
-    console.log(count + ': ' + item);
-    count += 1;
-  }
+  console.log(count + ': ' + item);
+  count += 1;
 };
