@@ -9,16 +9,17 @@ const options = {
     'User-Agent': 'gunter'
   }
 };
-let i = 0;
-request(options, function (err, res, body) {
+request(options, function (err, response, body) {
   if (err) console.log(err);
-  const json = JSON.parse(body);
-  for (const index in json.results) {
-    for (const list in json.results[index].characters) {
-      if (list == 18) {
-        i += 1;
+  const films = JSON.parse(body).results;
+  let count = 0;
+  for (const index in films) {
+    const filmChars = films[index].characters;
+    for (const char in filmChars) {
+      if (filmChars[char].includes('18')) {
+        count++;
       }
     }
   }
-  console.log(i - 1);
+  console.log(count);
 });
